@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobActivator.Core", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobActivator.Core.Tests", "test\WebJobActivator.Core.Tests\WebJobActivator.Core.Tests.csproj", "{181FB43D-D389-483E-8E3E-35360CD2E43F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobActivator.Autofac", "src\WebJobActivator.Autofac\WebJobActivator.Autofac.csproj", "{E95FA160-60BB-4369-A57C-12F82742A8EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{181FB43D-D389-483E-8E3E-35360CD2E43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{181FB43D-D389-483E-8E3E-35360CD2E43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{181FB43D-D389-483E-8E3E-35360CD2E43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E95FA160-60BB-4369-A57C-12F82742A8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95FA160-60BB-4369-A57C-12F82742A8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95FA160-60BB-4369-A57C-12F82742A8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95FA160-60BB-4369-A57C-12F82742A8EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F8C61EAD-2CAC-468A-892A-96D9996C0FE6} = {EE8AB7BD-9057-4AE4-97F2-3878BA254387}
 		{181FB43D-D389-483E-8E3E-35360CD2E43F} = {C42B9F62-5E45-4C7B-B54E-35FC41233E07}
+		{E95FA160-60BB-4369-A57C-12F82742A8EF} = {EE8AB7BD-9057-4AE4-97F2-3878BA254387}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A52ADBD1-4047-4489-AD64-952EF3042293}
