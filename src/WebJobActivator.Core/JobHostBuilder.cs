@@ -11,6 +11,8 @@ namespace Aliencube.WebJobActivator.Core
     {
         private readonly JobHostConfiguration _config;
 
+        private JobHost _host;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="JobHostBuilder"/> class.
         /// </summary>
@@ -29,21 +31,29 @@ namespace Aliencube.WebJobActivator.Core
         /// <inheritdoc />
         public bool IsRunning { get; set; }
 
-        /// <summary>
-        /// Gets the <see cref="Microsoft.Azure.WebJobs.JobHost"/> instance.
-        /// </summary>
-        protected JobHost JobHost { get; private set; }
+        /// <inheritdoc />
+        public IJobHostBuilder AddConfiguration(Action<JobHostConfiguration> action)
+        {
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action));
+            }
+
+            action.Invoke(this._config);
+
+            return this;
+        }
 
         /// <inheritdoc />
         public void BuildHost()
         {
-            this.JobHost = new JobHost(this._config);
+            this._host = new JobHost(this._config);
         }
 
         /// <inheritdoc />
         public void RunAndBlock()
         {
-            this.JobHost.RunAndBlock();
+            this._host.RunAndBlock();
         }
     }
 }

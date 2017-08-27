@@ -1,4 +1,5 @@
 ﻿using Aliencube.WebJobActivator.Core.Tests.Fixtures;
+using Aliencube.WebJobActivator.Tests.Common;
 
 using FluentAssertions;
 
@@ -12,13 +13,33 @@ namespace Aliencube.WebJobActivator.Core.Tests
     [TestClass]
     public class WebJobActivatorTests
     {
+        private WebJobActivatorFixture _fixture;
+
+        /// <summary>
+        /// Initializes the test instance.
+        /// </summary>
+        [TestInitialize]
+        public void Init()
+        {
+            this._fixture = new WebJobActivatorFixture();
+        }
+
+        /// <summary>
+        /// Cleans up all resources.
+        /// </summary>
+        [TestCleanup]
+        public void Cleanup()
+        {
+            this._fixture.Dispose();
+        }
+
         /// <summary>
         /// Tests whether the method should return result or not.
         /// </summary>
         [TestMethod]
-        public void Given_WithoutHandler_RegisterDependencies_ShouldReturn_Result()
+        public void Given_NullHandler_RegisterDependencies_ShouldReturn_Result()
         {
-            var activator = new FooWebJobActivator();
+            var activator = this._fixture.ArrangeWebJobActivator(out RegistrationHandler handler);
 
             var result = activator.RegisterDependencies((RegistrationHandler)null);
 
@@ -32,8 +53,7 @@ namespace Aliencube.WebJobActivator.Core.Tests
         [TestMethod]
         public void Given_Handler_RegisterDependencies_ShouldReturn_Result()
         {
-            var activator = new FooWebJobActivator();
-            var handler = new FooRegistrationHandler();
+            var activator = this._fixture.ArrangeWebJobActivator(out RegistrationHandler handler);
 
             var result = activator.RegisterDependencies(handler);
 

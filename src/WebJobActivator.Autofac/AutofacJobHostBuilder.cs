@@ -32,6 +32,11 @@ namespace Aliencube.WebJobActivator.Autofac
 
         private static JobHostConfiguration GetJobHostConfiguration(IModule module)
         {
+            if (module == null)
+            {
+                return null;
+            }
+
             var handler = new AutofacRegistrationHandler() { RegisterModule = p => p.RegisterModule(module) };
             var activator = new AutofacJobActivator().RegisterDependencies(handler);
             var builder = new JobHostConfigurationBuilder(activator);

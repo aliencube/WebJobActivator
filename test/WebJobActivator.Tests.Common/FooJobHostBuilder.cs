@@ -1,6 +1,8 @@
-﻿using Microsoft.Azure.WebJobs;
+﻿using Aliencube.WebJobActivator.Core;
 
-namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
+using Microsoft.Azure.WebJobs;
+
+namespace Aliencube.WebJobActivator.Tests.Common
 {
     /// <summary>
     /// This represents the builder entity for <see cref="JobHost"/>

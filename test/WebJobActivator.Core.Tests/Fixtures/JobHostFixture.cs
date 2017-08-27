@@ -2,23 +2,25 @@
 
 using Aliencube.WebJobActivator.Tests.Common;
 
+using Microsoft.Azure.WebJobs;
+
 namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
 {
     /// <summary>
-    /// This represents the fixture entity for <see cref="JobHostConfigurationBuilderTests"/>.
+    /// This represents the fixture entity for <see cref="JobHostBuilderTests"/>.
     /// </summary>
-    public class JobHostConfigurationFixture : IDisposable
+    public class JobHostFixture : IDisposable
     {
         private bool _disposed;
 
         /// <summary>
-        /// Arranges the <see cref="IJobHostConfigurationBuilder"/> instance.
+        /// Arranges the <see cref="IJobHostBuilder"/> instance.
         /// </summary>
-        /// <returns>Returns the <see cref="IJobHostConfigurationBuilder"/> instance.</returns>
-        public IJobHostConfigurationBuilder ArrangeJobHostConfigurationBuilder()
+        /// <returns>Returns the <see cref="IJobHostBuilder"/> instance.</returns>
+        public IJobHostBuilder ArrangeJobHostBuilder()
         {
-            var activator = new FooWebJobActivator();
-            var builder = new JobHostConfigurationBuilder(activator);
+            var config = new JobHostConfiguration();
+            var builder = new FooJobHostBuilder(config);
 
             return builder;
         }

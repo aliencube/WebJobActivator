@@ -28,7 +28,7 @@ namespace Aliencube.WebJobActivator.Core
         }
 
         /// <inheritdoc />
-        public void AddConfiguration(Action<JobHostConfiguration> action)
+        public IJobHostConfigurationBuilder AddConfiguration(Action<JobHostConfiguration> action)
         {
             if (action == null)
             {
@@ -36,6 +36,8 @@ namespace Aliencube.WebJobActivator.Core
             }
 
             action.Invoke(this._config);
+
+            return this;
         }
 
         /// <inheritdoc />

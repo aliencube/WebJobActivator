@@ -13,8 +13,9 @@ namespace Aliencube.WebJobActivator.Core
         /// Adds configuration.
         /// </summary>
         /// <param name="action"><see cref="Action{JobHostConfiguration}"/> instance.</param>
+        /// <returns>Returns the <see cref="IJobHostConfigurationBuilder"/> instance.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="action"/> is <see langword="null"/>.</exception>
-        void AddConfiguration(Action<JobHostConfiguration> action);
+        IJobHostConfigurationBuilder AddConfiguration(Action<JobHostConfiguration> action);
 
         /// <summary>
         /// Builds configuration.

@@ -1,4 +1,4 @@
-﻿namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
+﻿namespace Aliencube.WebJobActivator.Tests.Common
 {
     /// <summary>
     /// This represents the function entity for Foo.

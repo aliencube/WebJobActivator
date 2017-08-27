@@ -1,4 +1,6 @@
-﻿namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
+﻿using Aliencube.WebJobActivator.Core;
+
+namespace Aliencube.WebJobActivator.Tests.Common
 {
     /// <summary>
     /// This represents the registration handler entity for Foo.

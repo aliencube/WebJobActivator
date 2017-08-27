@@ -26,12 +26,16 @@ namespace Aliencube.WebJobActivator.Autofac
         {
             if (handler == null)
             {
+                this._container = this._builder.Build();
+
                 return this;
             }
 
             var autofac = handler as AutofacRegistrationHandler;
             if (autofac == null)
             {
+                this._container = this._builder.Build();
+
                 return this;
             }
 
@@ -45,7 +49,7 @@ namespace Aliencube.WebJobActivator.Autofac
                 autofac.RegisterType.Invoke(this._builder);
             }
 
-            handler.IsRegistered = true;
+            autofac.IsRegistered = true;
 
             this._container = this._builder.Build();
 
