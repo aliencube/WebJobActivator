@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WebJobActivator.Autofac</id>
+    <version>$version$</version>
+    <title>WebJobActivator.Autofac</title>
+    <authors>Aliencube Community</authors>
+    <owners>justinyoo</owners>
+    <licenseUrl>https://github.com/aliencube/WebJobActivator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aliencube/WebJobActivator</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/aliencube/WebJobActivator/master/WebJobActivator.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>
+      This provides implementations of IJobActivator for Azure WebJob with Autofac.
+    </summary>
+    <description>
+      <![CDATA[
+        This provides implementations of IJobActivator for Azure WebJob with Autofac.
+      ]]>
+    </description>
+    <copyright>Aliencube Community. All rights reserved.</copyright>
+    <tags>Aliencube WebJob JobActivator JobHost JobHostConfiguration Autofac</tags>
+    <dependencies>
+      <dependency id="Autofac" version="4.3.0" />
+      <dependency id="Microsoft.Azure.WebJobs" version="2.0.0" />
+      <dependency id="WebJobActivator.Core" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\**\WebJobActivator.Autofac.*" target="lib\net46" />
+  </files>
+</package>
