@@ -7,21 +7,15 @@ Param(
 # Restores NuGet packages
 Write-Host "Restoring NuGet packages ..." -ForegroundColor Green
 
-nuget restore .\Autofac.Extras.CommonServiceLocator.sln
+nuget restore .\WebJobActivator.sln
 
 Write-Host "NuGet packages restored" -ForegroundColor Green
 
 # Builds solution
-Write-Host "Building Autofac.Extras.CommonServiceLocator.sln ..." -ForegroundColor Green
+Write-Host "Building WebJobActivator.sln ..." -ForegroundColor Green
 
-msbuild .\Autofac.Extras.CommonServiceLocator.sln /t:Rebuild /p:Configuration=$Configuration /p:Platform=$Platform
+# $msbuild = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe"
+$msbuild = "msbuild"
+& $msbuild .\WebJobActivator.sln /t:Rebuild /p:Configuration=$Configuration /p:Platform=$Platform
 
-Write-Host "Autofac.Extras.CommonServiceLocator.sln built" -ForegroundColor Green
-
-# Builds NuGet package
-
-Write-Host "Building NuGet package..." -ForegroundColor Green
-
-# dotnet pack .\src\Autofac.Extras.CommonServiceLocator\Autofac.Extras.CommonServiceLocator.csproj --configuration $Configuration --include-symbols --no-build --output "bin\$Configuration"
-
-Write-Host "NuGet package built" -ForegroundColor Green
+Write-Host "WebJobActivator.sln built" -ForegroundColor Green
