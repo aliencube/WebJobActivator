@@ -1,11 +1,8 @@
 # WebJobActivator #
 
-* Build Status [![Build status](https://ci.appveyor.com/api/projects/status/uhe9ias4mh99xptf/branch/dev?svg=true)](https://ci.appveyor.com/project/justinyoo/webjobactivator/branch/dev)
-* WebJobActivator.Core [![](https://img.shields.io/nuget/dt/WebJobActivator.Core.svg)](https://www.nuget.org/packages/WebJobActivator.Core/)
-[![](https://img.shields.io/nuget/v/WebJobActivator.Core.svg)](https://www.nuget.org/packages/WebJobActivator.Core/)
-* WebJobActivator.Autofac [![](https://img.shields.io/nuget/dt/WebJobActivator.Autofac.svg)](https://www.nuget.org/packages/WebJobActivator.Autofac/)
-[![](https://img.shields.io/nuget/v/WebJobActivator.Autofac.svg)](https://www.nuget.org/packages/WebJobActivator.Autofac/)
-
+| Build Status | [`WebJobActivator.Core`](https://www.nuget.org/packages/WebJobActivator.Core/) | [`WebJobActivator.Autofac`](https://www.nuget.org/packages/WebJobActivator.Autofac/) |
+| ----- | ----- |  ----- |
+| [![Build status](https://ci.appveyor.com/api/projects/status/uhe9ias4mh99xptf/branch/dev?svg=true)](https://ci.appveyor.com/project/justinyoo/webjobactivator/branch/dev) | [![](https://img.shields.io/nuget/dt/WebJobActivator.Core.svg)](https://www.nuget.org/packages/WebJobActivator.Core/) [![](https://img.shields.io/nuget/v/WebJobActivator.Core.svg)](https://www.nuget.org/packages/WebJobActivator.Core/) | [![](https://img.shields.io/nuget/dt/WebJobActivator.Autofac.svg)](https://www.nuget.org/packages/WebJobActivator.Autofac/) [![](https://img.shields.io/nuget/v/WebJobActivator.Autofac.svg)](https://www.nuget.org/packages/WebJobActivator.Autofac/) |
 
 This provides core implementations of `IJobActivator` for Azure WebJob to be used by various IoC container libraries.
 
