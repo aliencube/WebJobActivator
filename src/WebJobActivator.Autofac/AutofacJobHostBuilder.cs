@@ -17,20 +17,20 @@ namespace Aliencube.WebJobActivator.Autofac
         /// </summary>
         /// <param name="module"><see cref="IModule"/> instance.</param>
         public AutofacJobHostBuilder(IModule module)
-            : this(GetJobHostConfiguration(module))
+            : this(GetJobHostConfigurationBuilder(module))
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AutofacJobHostBuilder"/> class.
         /// </summary>
-        /// <param name="config"><see cref="JobHostConfiguration"/> instance.</param>
-        public AutofacJobHostBuilder(JobHostConfiguration config)
+        /// <param name="config"><see cref="JobHostConfigurationBuilder"/> instance.</param>
+        public AutofacJobHostBuilder(JobHostConfigurationBuilder config)
             : base(config)
         {
         }
 
-        private static JobHostConfiguration GetJobHostConfiguration(IModule module)
+        private static JobHostConfigurationBuilder GetJobHostConfigurationBuilder(IModule module)
         {
             if (module == null)
             {
@@ -41,7 +41,7 @@ namespace Aliencube.WebJobActivator.Autofac
             var activator = new AutofacJobActivator().RegisterDependencies(handler);
             var builder = new JobHostConfigurationBuilder(activator);
 
-            return builder.Build();
+            return builder;
         }
     }
 }

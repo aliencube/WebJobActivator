@@ -16,16 +16,16 @@ namespace Aliencube.WebJobActivator.Core
         /// <summary>
         /// Initializes a new instance of the <see cref="JobHostBuilder"/> class.
         /// </summary>
-        /// <param name="config"><see cref="JobHostConfiguration"/> instance.</param>
+        /// <param name="config"><see cref="JobHostConfigurationBuilder"/> instance.</param>
         /// <exception cref="ArgumentNullException"><paramref name="config"/> is <see langword="null"/></exception>
-        protected JobHostBuilder(JobHostConfiguration config)
+        protected JobHostBuilder(JobHostConfigurationBuilder config)
         {
             if (config == null)
             {
                 throw new ArgumentNullException(nameof(config));
             }
 
-            this._config = config;
+            this._config = config.Build();
         }
 
         /// <inheritdoc />

@@ -6,6 +6,8 @@ using Autofac.Core;
 
 using Microsoft.Azure.WebJobs;
 
+using Moq;
+
 namespace Aliencube.WebJobActivator.Autofac.Tests.Fixtures
 {
     /// <summary>
@@ -35,7 +37,8 @@ namespace Aliencube.WebJobActivator.Autofac.Tests.Fixtures
         /// <returns>Returns the <see cref="IJobHostBuilder"/> instance.</returns>
         public IJobHostBuilder ArrangeAutofacJobHostBuilder()
         {
-            var config = new JobHostConfiguration();
+            var activator = new Mock<IWebJobActivator>();
+            var config = new JobHostConfigurationBuilder(activator.Object);
 
             var builder = new AutofacJobHostBuilder(config);
 

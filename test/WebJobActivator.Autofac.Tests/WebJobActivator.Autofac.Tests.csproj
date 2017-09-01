@@ -46,6 +46,9 @@
     <PackageReference Include="Legacy2CPSWorkaround" Version="1.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Moq">
+      <Version>4.7.99</Version>
+    </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
       <Version>1.1.18</Version>
     </PackageReference>

@@ -172,11 +172,11 @@ Finally, in order to build `JobHost` with `Autofac`, we need to extend `JobHostB
 public class AutofacJobHostBuilder : JobHostBuilder
 {
     public AutofacJobHostBuilder(IModule module)
-        : this(GetJobHostConfiguration(module))
+        : this(GetJobHostConfigurationBuilder(module))
     {
     }
 
-    private static JobHostConfiguration GetJobHostConfiguration(IModule module)
+    private static JobHostConfigurationBuilder GetJobHostConfigurationBuilder(IModule module)
     {
         if (module == null)
         {
@@ -187,7 +187,7 @@ public class AutofacJobHostBuilder : JobHostBuilder
         var activator = new AutofacJobActivator().RegisterDependencies(handler);
         var builder = new JobHostConfigurationBuilder(activator);
 
-        return builder.Build();
+        return builder;
     }
 }
 ```
@@ -200,6 +200,12 @@ The example above is only for `Autofac`. However, if you prefer using [`SimpleIn
 ## Limitations ##
 
 * **WebJobActivator** won't support .NET Standard until the referencing [Azure WebJob SDK](https://www.nuget.org/packages/Microsoft.Azure.WebJobs/) supports it.
+
+
+## TO-DO Lists ##
+
+* Integrating [`SimpleInjector`](https://simpleinjector.org/)
+* Integrating [`Ninject`](http://www.ninject.org/)
 
 
 ## Contributions ##

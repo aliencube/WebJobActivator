@@ -46,7 +46,7 @@ namespace Aliencube.WebJobActivator.Autofac.Tests
         [TestMethod]
         public void Given_NullParameter_Constructor_ShouldThrow_Exception()
         {
-            Action action = () => new AutofacJobHostBuilder((JobHostConfiguration)null);
+            Action action = () => new AutofacJobHostBuilder((JobHostConfigurationBuilder)null);
             action.ShouldThrow<ArgumentNullException>();
 
             action = () => new AutofacJobHostBuilder((IModule)null);

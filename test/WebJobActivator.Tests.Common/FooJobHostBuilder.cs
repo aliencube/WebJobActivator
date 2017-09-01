@@ -12,8 +12,8 @@ namespace Aliencube.WebJobActivator.Tests.Common
         /// <summary>
         /// Initializes a new instance of the <see cref="FooJobHostBuilder"/> class.
         /// </summary>
-        /// <param name="config"><see cref="JobHostConfiguration"/> instance.</param>
-        public FooJobHostBuilder(JobHostConfiguration config)
+        /// <param name="config"><see cref="JobHostConfigurationBuilder"/> instance.</param>
+        public FooJobHostBuilder(JobHostConfigurationBuilder config)
             : base(config)
         {
         }

@@ -2,7 +2,7 @@
 
 using Aliencube.WebJobActivator.Tests.Common;
 
-using Microsoft.Azure.WebJobs;
+using Moq;
 
 namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
 {
@@ -19,7 +19,8 @@ namespace Aliencube.WebJobActivator.Core.Tests.Fixtures
         /// <returns>Returns the <see cref="IJobHostBuilder"/> instance.</returns>
         public IJobHostBuilder ArrangeJobHostBuilder()
         {
-            var config = new JobHostConfiguration();
+            var activator = new Mock<IWebJobActivator>();
+            var config = new JobHostConfigurationBuilder(activator.Object);
             var builder = new FooJobHostBuilder(config);
 
             return builder;
