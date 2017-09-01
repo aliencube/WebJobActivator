@@ -1,7 +1,7 @@
 # dev ONLY
 -
   environment:
-    package_semantic_version: 0.1.0
+    package_semantic_version: 1.0.0
   version: $(package_semantic_version).{build}
   pull_requests:
     do_not_increment_build_number: true
@@ -39,7 +39,7 @@
 # release ALL
 -
   environment:
-    package_semantic_version: 0.1.0
+    package_semantic_version: 1.0.0
   version: $(package_semantic_version).{build}
   pull_requests:
     do_not_increment_build_number: true
@@ -93,7 +93,7 @@
 # release CORE
 -
   environment:
-    package_semantic_version: 0.1.1
+    package_semantic_version: 1.0.0
   version: $(package_semantic_version).{build}
   pull_requests:
     do_not_increment_build_number: true
@@ -143,7 +143,7 @@
 # release AUTOFAC
 -
   environment:
-    package_semantic_version: 0.1.2
+    package_semantic_version: 1.0.0
   version: $(package_semantic_version).{build}
   pull_requests:
     do_not_increment_build_number: true
