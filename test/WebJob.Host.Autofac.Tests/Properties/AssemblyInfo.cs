@@ -2,11 +2,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("WebJob.Host.Autofac.Tests")]
+[assembly: AssemblyTitle("Aliencube.WebJob.Host.Autofac.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WebJob.Host.Autofac.Tests")]
+[assembly: AssemblyProduct("Aliencube.WebJob.Host.Autofac.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

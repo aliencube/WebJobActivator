@@ -7,7 +7,7 @@
     <ProjectGuid>{446C4399-8EAE-418E-90CB-9EF93A2D4E72}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebJob.Host.Autofac</RootNamespace>
+    <RootNamespace>Aliencube.WebJob.Host.Autofac</RootNamespace>
     <AssemblyName>WebJob.Host.Autofac</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
