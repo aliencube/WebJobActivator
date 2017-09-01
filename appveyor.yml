@@ -1,0 +1,191 @@
+# dev ONLY
+-
+  environment:
+    package_semantic_version: 0.1.0
+  version: $(package_semantic_version).{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - dev
+  skip_tags: true
+  skip_commits:
+    files:
+      - .gitignore
+      - appveyor.yml
+      - LICENSE
+      - README.md
+      - Settings.StyleCop
+      - WebJobActivator.png
+      - WebJobActivator.runsettings
+      - WebJobActivator.sln
+      - WebJobActivator.sln.DotSettings
+      - '**/*.csproj'
+      - '*.ps1'
+  image: Visual Studio 2017
+  configuration: Debug
+  platform: Any CPU
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+  nuget:
+    disable_publish_on_pr: true
+  build_script:
+  - ps: .\build-solution.ps1 -Configuration $env:configuration -Platform $env:platform
+
+# release ALL
+-
+  environment:
+    package_semantic_version: 0.1.0
+  version: $(package_semantic_version).{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - release/all
+  skip_tags: true
+  # skip_commits:
+  #   files:
+      # - .gitignore
+      # - appveyor.yml
+      # - LICENSE
+      # - README.md
+      # - Settings.StyleCop
+      # - WebJobActivator.png
+      # - WebJobActivator.runsettings
+      # - WebJobActivator.sln
+      # - WebJobActivator.sln.DotSettings
+      # - '**/*.csproj'
+      # - '*.ps1'
+  image: Visual Studio 2017
+  configuration: Release
+  platform: Any CPU
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+  nuget:
+    disable_publish_on_pr: true
+  build_script:
+  - ps: .\build-solution.ps1 -Configuration $env:configuration -Platform $env:platform
+  after_test:
+  - ps: .\build-package.ps1 -Version $env:package_semantic_version -Configuration $env:configuration
+  artifacts:
+  - path: .\src\WebJobActivator.Core\**\*.nupkg
+    name: WebJobActivator.Core
+  - path: .\src\WebJobActivator.Autofac\**\*.nupkg
+    name: WebJobActivator.Autofac
+  deploy:
+  - provider: Environment
+    name: NuGet for WebJobActivator.Core
+  - provider: Environment
+    name: NuGet for WebJobActivator.Autofac
+  after_deploy:
+  - cmd: git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_auth_token):x-oauth-basic@github.com`n"
+  - cmd: git push origin --delete release/all
+
+# release CORE
+-
+  environment:
+    package_semantic_version: 0.1.0
+  version: $(package_semantic_version).{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - release/core
+  skip_tags: true
+  # skip_commits:
+  #   files:
+      # - .gitignore
+      # - appveyor.yml
+      # - LICENSE
+      # - README.md
+      # - Settings.StyleCop
+      # - WebJobActivator.png
+      # - WebJobActivator.runsettings
+      # - WebJobActivator.sln
+      # - WebJobActivator.sln.DotSettings
+      # - '**/*.csproj'
+      # - '*.ps1'
+  image: Visual Studio 2017
+  configuration: Release
+  platform: Any CPU
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+  nuget:
+    disable_publish_on_pr: true
+  build_script:
+  - ps: .\build-solution.ps1 -Configuration $env:configuration -Platform $env:platform
+  after_test:
+  - ps: .\build-package.ps1 -Version $env:package_semantic_version -Configuration $env:configuration
+  artifacts:
+  - path: .\src\WebJobActivator.Core\**\*.nupkg
+    name: WebJobActivator.Core
+  deploy:
+  - provider: Environment
+    name: NuGet for WebJobActivator.Core
+  after_deploy:
+  - cmd: git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_auth_token):x-oauth-basic@github.com`n"
+  - cmd: git push origin --delete release/core
+
+# release AUTOFAC
+-
+  environment:
+    package_semantic_version: 0.1.0
+  version: $(package_semantic_version).{build}
+  pull_requests:
+    do_not_increment_build_number: true
+  branches:
+    only:
+    - release/autofac
+  skip_tags: true
+  # skip_commits:
+  #   files:
+      # - .gitignore
+      # - appveyor.yml
+      # - LICENSE
+      # - README.md
+      # - Settings.StyleCop
+      # - WebJobActivator.png
+      # - WebJobActivator.runsettings
+      # - WebJobActivator.sln
+      # - WebJobActivator.sln.DotSettings
+      # - '**/*.csproj'
+      # - '*.ps1'
+  image: Visual Studio 2017
+  configuration: Release
+  platform: Any CPU
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+  nuget:
+    disable_publish_on_pr: true
+  build_script:
+  - ps: .\build-solution.ps1 -Configuration $env:configuration -Platform $env:platform
+  after_test:
+  - ps: .\build-package.ps1 -Version $env:package_semantic_version -Configuration $env:configuration
+  artifacts:
+  - path: .\src\WebJobActivator.Autofac\**\*.nupkg
+    name: WebJobActivator.Autofac
+  deploy:
+  - provider: Environment
+    name: NuGet for WebJobActivator.Autofac
+  after_deploy:
+  - cmd: git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_auth_token):x-oauth-basic@github.com`n"
+  - cmd: git push origin --delete release/autofac

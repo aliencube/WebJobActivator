@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>WebJobActivator.Core</id>
+    <version>$version$</version>
+    <title>WebJobActivator.Core</title>
+    <authors>Aliencube Community</authors>
+    <owners>justinyoo</owners>
+    <licenseUrl>https://github.com/aliencube/WebJobActivator/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aliencube/WebJobActivator</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/aliencube/WebJobActivator/master/WebJobActivator.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>
+      This provides core implementations of IJobActivator for Azure WebJob to be used by various IoC container libraries.
+    </summary>
+    <description>
+      <![CDATA[
+        This provides core implementations of IJobActivator for Azure WebJob to be used by various IoC container libraries.
+      ]]>
+    </description>
+    <copyright>Aliencube Community. All rights reserved.</copyright>
+    <tags>Aliencube WebJob JobActivator JobHost JobHostConfiguration</tags>
+    <dependencies>
+      <dependency id="Microsoft.Azure.WebJobs" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\**\WebJobActivator.Core.*" target="lib\net46" />
+  </files>
+</package>
