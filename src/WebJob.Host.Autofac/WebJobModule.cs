@@ -10,6 +10,7 @@ namespace WebJob.Host.Autofac
         /// <inheritdoc />
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<Helper>().AsSelf().InstancePerDependency();
             builder.RegisterType<Functions>().AsSelf().InstancePerDependency();
         }
     }
