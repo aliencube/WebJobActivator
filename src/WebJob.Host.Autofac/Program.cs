@@ -1,4 +1,5 @@
-﻿using Aliencube.WebJobActivator.Autofac;
+﻿using Aliencube.WebJob.Host.Autofac;
+using Aliencube.WebJobActivator.Autofac;
 using Aliencube.WebJobActivator.Core;
 
 namespace WebJob.Host.Autofac

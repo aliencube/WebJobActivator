@@ -6,7 +6,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Moq;
 
-namespace WebJob.Host.Autofac.Tests
+using WebJob.Host.Autofac;
+
+namespace Aliencube.WebJob.Host.Autofac.Tests
 {
     /// <summary>
     /// This represents the test entity for WebJob's program.

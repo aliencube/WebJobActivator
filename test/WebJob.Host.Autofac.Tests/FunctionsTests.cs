@@ -5,7 +5,7 @@ using FluentAssertions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace WebJob.Host.Autofac.Tests
+namespace Aliencube.WebJob.Host.Autofac.Tests
 {
     /// <summary>
     /// This represents the test entity for <see cref="Functions"/>.
