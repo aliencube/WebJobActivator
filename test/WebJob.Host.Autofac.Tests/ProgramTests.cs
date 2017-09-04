@@ -6,8 +6,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Moq;
 
-using WebJob.Host.Autofac;
-
 namespace Aliencube.WebJob.Host.Autofac.Tests
 {
     /// <summary>
