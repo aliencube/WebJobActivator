@@ -9,7 +9,7 @@ namespace Aliencube.WebJobActivator.Core
     /// </summary>
     public abstract class JobHostBuilder : IJobHostBuilder
     {
-        private readonly JobHostConfiguration _config;
+        private readonly IJobHostConfigurationBuilder _config;
 
         private JobHost _host;
 
@@ -25,7 +25,7 @@ namespace Aliencube.WebJobActivator.Core
                 throw new ArgumentNullException(nameof(config));
             }
 
-            this._config = config.Build();
+            this._config = config;
         }
 
         /// <inheritdoc />
@@ -39,7 +39,7 @@ namespace Aliencube.WebJobActivator.Core
                 throw new ArgumentNullException(nameof(action));
             }
 
-            action.Invoke(this._config);
+            this._config.AddConfiguration(action);
 
             return this;
         }
@@ -47,7 +47,7 @@ namespace Aliencube.WebJobActivator.Core
         /// <inheritdoc />
         public void BuildHost()
         {
-            this._host = new JobHost(this._config);
+            this._host = new JobHost(this._config.Build());
         }
 
         /// <inheritdoc />
