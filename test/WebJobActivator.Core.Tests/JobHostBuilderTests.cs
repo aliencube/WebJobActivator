@@ -59,9 +59,9 @@ namespace Aliencube.WebJobActivator.Core.Tests
             builder.AddConfiguration(p => p.UseDevelopmentSettings());
 
             var result = typeof(JobHostBuilder).GetField("_config", BindingFlags.Instance | BindingFlags.NonPublic)
-                                               .GetValue(builder) as JobHostConfiguration;
+                                               .GetValue(builder) as IJobHostConfigurationBuilder;
 
-            result.Tracing.ConsoleLevel.Should().Be(TraceLevel.Verbose);
+            result.Build().Tracing.ConsoleLevel.Should().Be(TraceLevel.Verbose);
         }
 
         /// <summary>

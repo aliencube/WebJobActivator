@@ -3,7 +3,7 @@ using System.IO;
 
 using Microsoft.Azure.WebJobs;
 
-namespace WebJob.Host.Autofac
+namespace Aliencube.WebJob.Host.Autofac
 {
     /// <summary>
     /// This represents the function entity for Azure WebJob.

@@ -1,7 +1,7 @@
 ﻿using Aliencube.WebJobActivator.Autofac;
 using Aliencube.WebJobActivator.Core;
 
-namespace WebJob.Host.Autofac
+namespace Aliencube.WebJob.Host.Autofac
 {
     /// <summary>
     /// This represents the entry point of the Azure WebJobs instance.

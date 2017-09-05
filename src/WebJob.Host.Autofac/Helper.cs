@@ -1,4 +1,4 @@
-﻿namespace WebJob.Host.Autofac
+﻿namespace Aliencube.WebJob.Host.Autofac
 {
     /// <summary>
     /// This represents the helper entity.

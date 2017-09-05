@@ -6,7 +6,7 @@
     <ProjectGuid>{EABAC983-C52E-4539-B848-C66EE4BCAD88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebJob.Host.Autofac.Tests</RootNamespace>
+    <RootNamespace>Aliencube.WebJob.Host.Autofac.Tests</RootNamespace>
     <AssemblyName>WebJob.Host.Autofac.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
